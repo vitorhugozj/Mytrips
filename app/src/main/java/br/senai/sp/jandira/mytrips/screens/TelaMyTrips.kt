@@ -1,6 +1,5 @@
 package br.senai.sp.jandira.mytrips.screens
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -31,7 +30,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -45,7 +43,7 @@ import br.senai.sp.jandira.mytrips.ui.theme.MyTripsTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TelaHome(controleDeNavegacao: NavHostController) {
+fun TelaMyTrips(controleDeNavegacao: NavHostController) {
 
     var pesquisaState = remember {
         mutableStateOf("")
@@ -232,7 +230,7 @@ fun TelaHome(controleDeNavegacao: NavHostController) {
             Spacer(modifier = Modifier.height(20.dp))
             Text(text = "Past Trips")
             Spacer(modifier = Modifier.height(10.dp))
-            LazyColumn() {
+            LazyColumn {
                 items(3){
                     Card(
                         elevation = CardDefaults.cardElevation(6.dp),
@@ -331,5 +329,12 @@ fun TelaHome(controleDeNavegacao: NavHostController) {
                 }
             }
         }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun TelaMyTrips() {
+    MyTripsTheme {
     }
 }
