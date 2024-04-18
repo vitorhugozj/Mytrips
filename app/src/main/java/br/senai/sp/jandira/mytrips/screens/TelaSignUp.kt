@@ -70,245 +70,252 @@ fun TelaSignUp(controleDeNavegacao: NavHostController) {
     {
         Row(
             horizontalArrangement = Arrangement.End,
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Card(
-                modifier = Modifier
-                    .height(40.dp)
-                    .width(130.dp),
-                shape = RoundedCornerShape(bottomStart = 15.dp),
-                colors = CardDefaults.cardColors(containerColor = Color(0xFFA81DCE))
-            ) {}
-        }
-
-        Column(
             modifier = Modifier
                 .fillMaxWidth()
-        )
-        {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(18.dp)
-            )
-            {
-                Spacer(modifier = Modifier.height(0.dp))
-                Text(
-                    text = "Sign Up",
-                    color = Color(0xFFA81DCE),
-                    fontWeight = FontWeight.ExtraBold,
-                    fontSize = 35.sp
-
-                )
-                Text(
-                    text = "Create a new account",
-                    color = Color(0xFF777677),
-                    fontSize = 17.sp,
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.perfil),
-                    contentDescription = "",
-                    modifier = Modifier
-                        .padding(0.dp, 23.dp)
-                        .width(80.dp)
-                        .height(80.dp)
-                )
-                OutlinedTextField(
-                    value = capturarUsername.value,
-                    onValueChange = {
-                        capturarUsername.value = it
-                    },
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Text
-                    ),
-                    modifier = Modifier
-                        .padding(0.dp, 7.dp)
-                        .fillMaxWidth(),
-
-                    colors = OutlinedTextFieldDefaults
-                        .colors(
-                            focusedBorderColor = Color(0xFFA81DCE),
-                            unfocusedBorderColor = Color(0xFFA81DCE)
-                        ),
-                    shape = RoundedCornerShape(13.dp),
-                    leadingIcon = {
-                        Image(
-                            painter = painterResource(id = R.drawable.person),
-                            contentDescription = "",
-                            contentScale = ContentScale.FillBounds,
-                            modifier = Modifier
-                                .height(24.dp)
-                                .width(22.dp)
-                        )
-                    },
-                    label = {
-                        Text(text = "Username")
-                    }
-
-                )
-                OutlinedTextField(
-                    value = capturarTel.value,
-                    onValueChange = {
-                        capturarTel.value = it
-                    },
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Phone
-                    ),
-                    modifier = Modifier
-                        .padding(0.dp, 7.dp)
-                        .fillMaxWidth(),
-
-                    colors = OutlinedTextFieldDefaults
-                        .colors(
-                            focusedBorderColor = Color(0xFFA81DCE),
-                            unfocusedBorderColor = Color(0xFFA81DCE)
-                        ),
-                    shape = RoundedCornerShape(13.dp),
-                    leadingIcon = {
-                        Image(
-                            painter = painterResource(id = R.drawable.phone),
-                            contentDescription = "",
-                            contentScale = ContentScale.Fit,
-                            modifier = Modifier
-                                .height(25.dp)
-                                .width(25.dp)
-                        )
-                    },
-                    label = {
-                        Text(text = "Phone")
-                    }
-
-                )
-
-                OutlinedTextField(
-                    value = capturarEmail.value,
-                    onValueChange = {
-                        capturarEmail.value = it
-                    },
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Email
-                    ),
-                    modifier = Modifier
-                        .padding(0.dp, 7.dp)
-                        .fillMaxWidth(),
-
-                    colors = OutlinedTextFieldDefaults
-                        .colors(
-                            focusedBorderColor = Color(0xFFA81DCE),
-                            unfocusedBorderColor = Color(0xFFA81DCE)
-                        ),
-                    shape = RoundedCornerShape(13.dp),
-                    leadingIcon = {
-                        Image(
-                            painter = painterResource(id = R.drawable.email),
-                            contentDescription = "",
-                            contentScale = ContentScale.FillBounds,
-                            modifier = Modifier
-                                .height(24.dp)
-                                .width(22.dp)
-                        )
-                    },
-                    label = {
-                        Text(text = "Email")
-                    }
-
-                )
-
-                OutlinedTextField(
-                    value = capturarPassword.value,
-                    onValueChange = {
-                        capturarPassword.value = it
-                    },
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Password
-                    ),
-                    visualTransformation = PasswordVisualTransformation(
-
-                    ),
-                    modifier = Modifier
-                        .padding(0.dp, 7.dp)
-                        .fillMaxWidth(),
-
-                    colors = OutlinedTextFieldDefaults
-                        .colors(
-                            focusedBorderColor = Color(0xFFA81DCE),
-                            unfocusedBorderColor = Color(0xFFA81DCE)
-                        ),
-                    shape = RoundedCornerShape(13.dp),
-                    leadingIcon = {
-                        Image(
-                            painter = painterResource(id = R.drawable.senha),
-                            contentDescription = "",
-                            contentScale = ContentScale.FillBounds,
-                            modifier = Modifier
-                                .height(24.dp)
-                                .width(22.dp)
-                        )
-                    },
-                    label = {
-                        Text(text = "Password")
-                    }
-
-                )
-
-            }
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(7.dp, 0.dp)
-            ) {
-                Checkbox(
-                    checked = optionState.value,
-                    onCheckedChange = {option ->
-                        optionState.value = option
-                    },
-                    colors = CheckboxDefaults.colors(
-                        uncheckedColor = Color(0xFFA81DCE),
-                        checkedColor = Color(0xFFA81DCE)
-                    )
-                )
-                Text(text = "Over 18?")
-            }
-
-            Button(
-                onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(12.dp),
-                modifier = Modifier
-                    .padding(13.dp, 0.dp)
-                    .fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(Color(0xFFA81DCE))
-            ) {
-                Text(
-                    text = "CREATE ACCOUNT",
-                    fontWeight = FontWeight.ExtraBold
-                )
-            }
-
-            Row(
-                horizontalArrangement = Arrangement.End,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(13.dp, 20.dp)
-            ) {
-                Text(text = "Already have an account?", fontWeight = FontWeight.ExtraLight)
-                Text(
-                    text = "Sign in",
-                    fontWeight = FontWeight.ExtraBold,
-                    color = Color(0xFFA81DCE)
-                )
-            }
-        }
-        Row(
-            horizontalArrangement = Arrangement.Start,
-            modifier = Modifier.fillMaxWidth()
         ) {
             Card(
                 modifier = Modifier
                     .height(40.dp)
                     .width(130.dp),
-                shape = RoundedCornerShape(topEnd = 15.dp),
-                colors = CardDefaults.cardColors(containerColor = Color(0xFFA81DCE))
+                shape = RoundedCornerShape(
+                    bottomStart = 15.dp
+                ),
+                colors = CardDefaults.cardColors(
+                    containerColor = Color(0xFFA81DCE)
+                )
             ) {
+            }
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+            )
+            {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(18.dp)
+                )
+                {
+                    Spacer(
+                        modifier = Modifier
+                            .height(0.dp)
+                    )
+                    Text(
+                        text = "Sign Up",
+                        color = Color(0xFFA81DCE),
+                        fontWeight = FontWeight.ExtraBold,
+                        fontSize = 35.sp
+                    )
+                    Text(
+                        text = "Create a new account",
+                        color = Color(0xFF777677),
+                        fontSize = 17.sp,
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.perfil),
+                        contentDescription = "",
+                        modifier = Modifier
+                            .padding(0.dp, 24.dp)
+                            .width(80.dp)
+                            .height(80.dp)
+                    )
+                    OutlinedTextField(
+                        value = capturarUsername.value,
+                        onValueChange = {
+                            capturarUsername.value = it
+                        },
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.Text
+                        ),
+                        modifier = Modifier
+                            .padding(0.dp, 7.dp)
+                            .fillMaxWidth(),
+
+                        colors = OutlinedTextFieldDefaults
+                            .colors(
+                                focusedBorderColor = Color(0xFFA81DCE),
+                                unfocusedBorderColor = Color(0xFFA81DCE)
+                            ),
+                        shape = RoundedCornerShape(13.dp),
+                        leadingIcon = {
+                            Image(
+                                painter = painterResource(id = R.drawable.person),
+                                contentDescription = "",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier
+                                    .height(24.dp)
+                                    .width(22.dp)
+                            )
+                        },
+                        label = {
+                            Text(text = "Username")
+                        }
+
+                    )
+                    OutlinedTextField(
+                        value = capturarTel.value,
+                        onValueChange = {
+                            capturarTel.value = it
+                        },
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.Phone
+                        ),
+                        modifier = Modifier
+                            .padding(0.dp, 7.dp)
+                            .fillMaxWidth(),
+
+                        colors = OutlinedTextFieldDefaults
+                            .colors(
+                                focusedBorderColor = Color(0xFFA81DCE),
+                                unfocusedBorderColor = Color(0xFFA81DCE)
+                            ),
+                        shape = RoundedCornerShape(13.dp),
+                        leadingIcon = {
+                            Image(
+                                painter = painterResource(id = R.drawable.phone),
+                                contentDescription = "",
+                                contentScale = ContentScale.Fit,
+                                modifier = Modifier
+                                    .height(25.dp)
+                                    .width(25.dp)
+                            )
+                        },
+                        label = {
+                            Text(text = "Phone")
+                        }
+
+                    )
+
+                    OutlinedTextField(
+                        value = capturarEmail.value,
+                        onValueChange = {
+                            capturarEmail.value = it
+                        },
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.Email
+                        ),
+                        modifier = Modifier
+                            .padding(0.dp, 7.dp)
+                            .fillMaxWidth(),
+
+                        colors = OutlinedTextFieldDefaults
+                            .colors(
+                                focusedBorderColor = Color(0xFFA81DCE),
+                                unfocusedBorderColor = Color(0xFFA81DCE)
+                            ),
+                        shape = RoundedCornerShape(13.dp),
+                        leadingIcon = {
+                            Image(
+                                painter = painterResource(id = R.drawable.email),
+                                contentDescription = "",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier
+                                    .height(24.dp)
+                                    .width(22.dp)
+                            )
+                        },
+                        label = {
+                            Text(text = "Email")
+                        }
+
+                    )
+
+                    OutlinedTextField(
+                        value = capturarPassword.value,
+                        onValueChange = {
+                            capturarPassword.value = it
+                        },
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.Password
+                        ),
+                        visualTransformation = PasswordVisualTransformation(
+
+                        ),
+                        modifier = Modifier
+                            .padding(0.dp, 7.dp)
+                            .fillMaxWidth(),
+
+                        colors = OutlinedTextFieldDefaults
+                            .colors(
+                                focusedBorderColor = Color(0xFFA81DCE),
+                                unfocusedBorderColor = Color(0xFFA81DCE)
+                            ),
+                        shape = RoundedCornerShape(13.dp),
+                        leadingIcon = {
+                            Image(
+                                painter = painterResource(id = R.drawable.senha),
+                                contentDescription = "",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier
+                                    .height(24.dp)
+                                    .width(22.dp)
+                            )
+                        },
+                        label = {
+                            Text(text = "Password")
+                        }
+
+                    )
+
+                }
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(7.dp, 0.dp)
+                ) {
+                    Checkbox(
+                        checked = optionState.value,
+                        onCheckedChange = { option ->
+                            optionState.value = option
+                        },
+                        colors = CheckboxDefaults.colors(
+                            uncheckedColor = Color(0xFFA81DCE),
+                            checkedColor = Color(0xFFA81DCE)
+                        )
+                    )
+                    Text(text = "Over 18?")
+                }
+
+                Button(
+                    onClick = { /*TODO*/ },
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier
+                        .padding(13.dp, 0.dp)
+                        .fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(Color(0xFFA81DCE))
+                ) {
+                    Text(
+                        text = "CREATE ACCOUNT",
+                        fontWeight = FontWeight.ExtraBold
+                    )
+                }
+
+                Row(
+                    horizontalArrangement = Arrangement.End,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(13.dp, 20.dp)
+                ) {
+                    Text(text = "Already have an account?", fontWeight = FontWeight.ExtraLight)
+                    Text(
+                        text = "Sign in",
+                        fontWeight = FontWeight.ExtraBold,
+                        color = Color(0xFFA81DCE)
+                    )
+                }
+            }
+            Row(
+                horizontalArrangement = Arrangement.Start,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Card(
+                    modifier = Modifier
+                        .height(40.dp)
+                        .width(130.dp),
+                    shape = RoundedCornerShape(topEnd = 15.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color(0xFFA81DCE))
+                ) {
+                }
             }
         }
     }
@@ -320,3 +327,5 @@ fun TelaSignUpPreview() {
     MyTripsTheme {
     }
 }
+
+
