@@ -1,6 +1,7 @@
 package br.senai.sp.jandira.mytrips.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -197,7 +198,10 @@ fun TelaLogin(controleDeNavegacao: NavHostController) {
                 Text(
                     text = "Sign in",
                     fontWeight = FontWeight.ExtraBold,
-                    color = Color(0xFFA81DCE)
+                    color = Color(0xFFA81DCE),
+                    modifier = Modifier.clickable {
+                        controleDeNavegacao.navigate("sign")
+                    }
                 )
             }
 

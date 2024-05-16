@@ -28,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -37,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import br.senai.sp.jandira.mytrips.R
+import br.senai.sp.jandira.mytrips.model.Usuario
 import br.senai.sp.jandira.mytrips.ui.theme.MyTripsTheme
 
 @Composable
@@ -61,6 +63,8 @@ fun TelaSignUp(controleDeNavegacao: NavHostController) {
     var optionState = remember {
         mutableStateOf(false)
     }
+
+
 
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
@@ -277,7 +281,17 @@ fun TelaSignUp(controleDeNavegacao: NavHostController) {
                 }
 
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = {
+                        val usuario = Usuario(
+                            nome = capturarUsername.value,
+                            email = capturarEmail.value,
+                            senha = capturarPassword.value,
+                            telefone =  capturarTel.value
+                        )
+
+                        .salvar(usuario)
+                        controleDeNavegacao.navigate("login")
+                    },
                     shape = RoundedCornerShape(12.dp),
                     modifier = Modifier
                         .padding(13.dp, 0.dp)

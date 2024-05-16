@@ -29,5 +29,6 @@ class CategoriaRepository {
                 id = R.drawable.beach
             )
         )
+        return listOf(mountain, snow, beach)
     }
 }
